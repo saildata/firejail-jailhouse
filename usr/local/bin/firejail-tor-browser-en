@@ -1,0 +1,11 @@
+#!/bin/bash
+
+# Default TBB sandbox
+# Notes: May need `defaultgw=` flag depending on setup
+
+TZ=UTC; firejail --net=enp4s0 --dns=127.0.0.1 --netfilter=/etc/firejail/nolocal-custom.net \
+         --profile=/etc/firejail/tor-browser-en.profile \
+         --rmenv=DBUS_SESSION_BUS_ADDRESS \
+         --noexec=proc \
+         --protocol=unix,inet \
+         /usr/bin/tor-browser-en
