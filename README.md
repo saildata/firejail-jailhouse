@@ -10,5 +10,5 @@ Firejail profiles
 3. *Optional* Modify the `.desktop` file launchers if necessary so that the exec directives point to the location specified in (1).  
   
 ## Notes  
-Feel free to clone, fork, modify, and send pull requests for obvious errors or omissions.  
+Feel free to clone, fork, modify, and send pull requests for additions, errors or omissions.  
 Cheers -  
