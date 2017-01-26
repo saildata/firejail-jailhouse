@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+# Keepassx2 launcher implementing a strict Firejail profile
+
+firejail --profile=/etc/firejail/keepassx2.profile \
+         --rmenv=DBUS_SESSION_BUS_ADDRESS \
+         --noexec=/proc \
+         /usr/bin/keepassx2
