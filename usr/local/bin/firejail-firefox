@@ -1,0 +1,27 @@
+#!/usr/bin/bash
+
+# Firefox launcher implementing a strict Firejail profile (see firefox-custom.profile and nolocal netfilter)
+#
+# Notes: -Lots of testing to get this as far as I could push without 'breaking' the browser
+#         and is much more conservative than the profile shipped with stock firejail.
+#        -CONFIG_USER_NS kernel config required for Arch Linux (for proper namespace support)
+#        -Confirm with `zgrep USER_NS /proc/config.gz`
+#
+# ****** -If it breaks: 1) Check the default gateway (see man firejail).
+# ******                2) Remove 'net' flag if on wifi (see man firejail)
+#        -Plumbing: firefox -> symlink to /usr/local/bin/firefox -> this script -> calls firefox2 (within a jail) 
+#                   firefox2 -> original firefox as installed
+#                   I wish I remembered now why I needed to implement this workaround.. BUT ... not going to try 
+#                   to redo/fix a working design at this point. I think it was a workaround for the desktop launcher, and
+#                   xdg link opening, but alas no notes (:
+#        TODO: Passing a URL to Firefox opens to the start page, not the URL. I suspect it's the redirect FF->FF2, but haven't
+#              looked too far into it.
+
+TZ=UTC; firejail --shell=none \
+         --net=enp4s0 \
+         --netfilter=/etc/firejail/nolocal-custom.net \
+         --profile=/etc/firejail/firefox-custom.profile \
+         --rmenv=DBUS_SESSION_BUS_ADDRESS \
+         --noexec=/proc \
+         --protocol=unix,inet \
+         /usr/bin/firefox2
