@@ -3,9 +3,9 @@ Firejail profiles
 
 ## Requirements
 [Firejail](https://github.com/netblue30/firejail)
-### Optional / works well with
-Firefox profile - [Profile-sync-daemon](https:// wiki.archlinux.org/index.php/Profile-sync-daemon)
-CONFIG_USER_NS - Kernel config for unprivileged user namespace support
+### Optional
+Firefox profile - [Profile-sync-daemon](https:// wiki.archlinux.org/index.php/Profile-sync-daemon)  
+CONFIG_USER_NS - Kernel config for unprivileged user namespace support  
 
 ## Install
 1. Put the [program launchers](https://github.com/saildata/firejail-jailhouse/tree/master/usr/local/bin) in a location that will be the first found in your $PATH. See `firejail (1) DESKTOP INTEGRATION`. `/usr/local/bin` seems to be a sane default.
