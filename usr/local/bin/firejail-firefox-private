@@ -7,6 +7,7 @@
 #         and is much more conservative than the profile shipped with stock firejail.
 #        -CONFIG_USER_NS kernel config required for Arch Linux (for proper namespace support)
 #        -Confirm with `zgrep USER_NS /proc/config.gz`
+#        -Optional: profile sync daemon (see Arch Linux wiki)
 #
 # ****** -If it breaks: 1) Check the default gateway (see man firejail).
 # ******                2) Remove 'net' flag if on wifi (see man firejail)
@@ -22,9 +23,7 @@
 #                 firefox-private.desktop Modify the appropriate exec lines in the desktop file to execute this launcher.
 
 TZ=UTC; firejail --private \
-         --shell=none \
-         --net=enp4s0 \
-         --netfilter=/etc/firejail/nolocal-custom.net \
+         --net=enp4s0 --netfilter=/etc/firejail/nolocal-custom.net \
          --profile=/etc/firejail/firefox-custom.profile \
          --rmenv=DBUS_SESSION_BUS_ADDRESS \
          --noexec=/proc \

@@ -1,5 +1,5 @@
 # Firejail profile for Mozilla Firefox (Iceweasel in Debian)
-# Modified from original
+# Modified from original. See notes in respective launchers.
 
 noblacklist ~/.mozilla
 noblacklist ~/.cache/mozilla
@@ -46,6 +46,8 @@ noroot
 nogroups
 seccomp
 tracelog
+
+shell none
 
 blacklist /proc/**
 blacklist /proc/self
