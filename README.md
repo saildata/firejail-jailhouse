@@ -2,7 +2,9 @@
 Firejail profiles  
   
 ## Requirements  
-[Firejail](https://github.com/netblue30/firejail)  
+[Firejail](https://github.com/netblue30/firejail) 
+## Optional for Firefox profile
+[Profile-sync-daemon](https://wiki.archlinux.org/index.php/Profile-sync-daemon)
   
 ## Install  
 1. Put the [program launchers](https://github.com/saildata/firejail-jailhouse/tree/master/usr/local/bin) in a location that will be the first found in your $PATH. See `firejail (1) DESKTOP INTEGRATION`. `/usr/local/bin` seems to be a sane default.  
