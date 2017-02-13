@@ -10,6 +10,9 @@
 #
 # ****** -If it breaks: 1) Check the default gateway (see man firejail).
 # ******                2) Remove 'net' flag if on wifi (see man firejail)
+# ******                3) If sound doesn't work, try restarting pulse audio (user mode/ Arch Linux) see
+#                          related-scripts/restartpulse-audio, which I use as a quick wrapper. Once PA is restarted
+#                          Ctrl-R (reload) the page and sound should work.
 #        -Plumbing: firefox -> symlink to /usr/local/bin/firefox -> this script -> calls firefox2 (within a jail)
 #                   firefox2 -> original firefox as installed
 #                   I wish I remembered now why I needed to implement this workaround.. BUT ... not going to try
