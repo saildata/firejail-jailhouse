@@ -1,0 +1,5 @@
+#!/bin/sh
+
+# Lazy/quick verification that the changes were what we wanted (see parts 1 and 2).
+
+grep -i --col 'exec' /usr/share/applications/firefox*.desktop

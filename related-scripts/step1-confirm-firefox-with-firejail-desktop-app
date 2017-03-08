@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# Quick 2 part script (1 of 2) to replace the necessary lines in the FF desktop file with the 
+# Firejail replacement one. Use after Firefox is updated.
+#
+# Part one lets you examine the changes prior to executing step two, which makes the changes in-place.
+
+sed 's/lib\/firefox\/firefox /local\/bin\/firefox /g' /usr/share/applications/firefox.desktop | grep -i --col 'exec'
+sed 's/lib\/firefox\/firefox /\/usr\/local\/bin\/firefox /g' /usr/share/applications/firefox-private.desktop | grep -i --col 'exec'
