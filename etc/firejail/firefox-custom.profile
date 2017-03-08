@@ -1,5 +1,4 @@
 # Firejail profile for Mozilla Firefox (Iceweasel in Debian)
-# Modified from original. See notes in respective launchers.
 
 noblacklist ~/.mozilla
 noblacklist ~/.cache/mozilla
@@ -19,6 +18,7 @@ blacklist /sys
 blacklist /var
 blacklist /srv
 
+
 mkdir ~/.mozilla
 whitelist ~/.mozilla
 mkdir ~/.cache/mozilla/firefox
@@ -29,12 +29,13 @@ whitelist ~/.pentadactylrc
 whitelist ~/.pentadactyl
 whitelist ~/.keysnail.js
 whitelist ~/.config/gnome-mplayer
+whitelist ~/.config/pulse
 whitelist ~/.cache/gnome-mplayer/plugin
 whitelist ~/.pki
 
 include /etc/firejail/whitelist-common.inc
 
-private-etc passwd,group,hostname,hosts,localtime,nsswitch.conf,resolv.conf,gtk-2.0,pango,fonts,iceweasel,firefox,mime.types,asound.conf,pulse
+private-etc passwd,group,hostname,hosts,localtime,nsswitch.conf,resolv.conf,gtk-2.0,pango,fonts,mime.types,asound.conf,pulse,ssl,ca-certificates
 
 private-tmp
 
